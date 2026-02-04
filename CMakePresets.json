@@ -1,0 +1,74 @@
+{
+    "version": 3,
+    "configurePresets": [
+        {
+            "name": "base",
+            "displayName": "Base",
+            "description": "Base",
+            "generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_C_COMPILER": "clang",
+                "CMAKE_CXX_COMPILER": "clang++",
+                "CMAKE_LINKER_TYPE": "LLD",
+                "FREERDP_UNIFIED_BUILD": "ON",
+                "BUILD_SHARED_LIBS": "OFF",
+                "WITH_CLIENT": "ON",
+                "WITH_SERVER": "OFF",
+                "WITH_SAMPLE": "OFF",
+                "WITH_TESTS": "OFF",
+                "WITH_GFX": "ON",
+                "WITH_FFMPEG": "ON",
+                "WITH_SWSCALE": "OFF",
+                "WITH_X11": "OFF",
+                "WITH_WAYLAND": "OFF",
+                "WITH_SDL": "OFF",
+                "WITH_CAIRO": "OFF",
+                "WITH_PULSE": "OFF",
+                "WITH_ALSA": "OFF",
+                "WITH_OPUS": "OFF",
+                "WITH_FUSE": "OFF",
+                "WITH_OSS": "OFF",
+                "WITH_CUPS": "OFF",
+                "WITH_PCSC": "OFF",
+                "WITH_SMARTCARD": "OFF",
+                "WITH_USB": "OFF",
+                "WITH_ICU": "OFF",
+                "WITH_MANPAGES": "OFF",
+                "WITH_JPEG": "ON",
+                "WITH_PNG": "ON",
+                "WITH_ZLIB": "ON",
+                "WITH_REMOTEFX": "OFF",
+                "WITH_NSCODEC": "ON"
+            }
+        },
+        {
+            "name": "debug",
+            "displayName": "Debug",
+            "description": "Debug",
+            "inherits": "base",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Debug",
+                "WITH_DEBUG_ALL": "OFF"
+            }
+        },
+        {
+            "name": "release",
+            "displayName": "Release",
+            "description": "Release",
+            "inherits": "base",
+            "cacheVariables": {
+                "CMAKE_BUILD_TYPE": "Release"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "debug",
+            "configurePreset": "debug"
+        },
+        {
+            "name": "release",
+            "configurePreset": "release"
+        }
+    ]
+}

@@ -36,7 +36,7 @@ if(FREERDP_VENDOR AND WITH_CLIENT)
     endif()
   endif()
 
-  if(WITH_CLIENT_SDL)
+  if(WITH_SDL AND WITH_CLIENT_SDL)
     add_subdirectory(SDL)
   endif()
 
@@ -47,6 +47,8 @@ if(FREERDP_VENDOR AND WITH_CLIENT)
   if(WITH_WAYLAND AND WAYLAND_FOUND)
     add_subdirectory(Wayland)
   endif()
+
+  add_subdirectory(DRM)
 
   if(APPLE)
     if(IOS)
